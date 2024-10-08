@@ -16,6 +16,11 @@
 		1A4D5AF92CB546CB001E5C34 /* TestCaloriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5AF82CB546CB001E5C34 /* TestCaloriesTests.swift */; };
 		1A4D5B032CB546CB001E5C34 /* TestCaloriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5B022CB546CB001E5C34 /* TestCaloriesUITests.swift */; };
 		1A4D5B052CB546CB001E5C34 /* TestCaloriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5B042CB546CB001E5C34 /* TestCaloriesUITestsLaunchTests.swift */; };
+		1A4D5B132CB54BE2001E5C34 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 1A4D5B122CB54BE2001E5C34 /* RxBlocking */; };
+		1A4D5B152CB54BE2001E5C34 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 1A4D5B142CB54BE2001E5C34 /* RxCocoa */; };
+		1A4D5B172CB54BE2001E5C34 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 1A4D5B162CB54BE2001E5C34 /* RxRelay */; };
+		1A4D5B1A2CB54D2C001E5C34 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1A4D5B192CB54D2C001E5C34 /* SnapKit */; };
+		1A4D5B1C2CB54D2C001E5C34 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 1A4D5B1B2CB54D2C001E5C34 /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A4D5B1A2CB54D2C001E5C34 /* SnapKit in Frameworks */,
+				1A4D5B172CB54BE2001E5C34 /* RxRelay in Frameworks */,
+				1A4D5B152CB54BE2001E5C34 /* RxCocoa in Frameworks */,
+				1A4D5B1C2CB54D2C001E5C34 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A4D5B132CB54BE2001E5C34 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +153,12 @@
 			dependencies = (
 			);
 			name = TestCalories;
+			packageProductDependencies = (
+				1A4D5B142CB54BE2001E5C34 /* RxCocoa */,
+				1A4D5B162CB54BE2001E5C34 /* RxRelay */,
+				1A4D5B192CB54D2C001E5C34 /* SnapKit */,
+				1A4D5B1B2CB54D2C001E5C34 /* SnapKit-Dynamic */,
+			);
 			productName = TestCalories;
 			productReference = 1A4D5ADE2CB546CA001E5C34 /* TestCalories.app */;
 			productType = "com.apple.product-type.application";
@@ -161,6 +177,9 @@
 				1A4D5AF62CB546CB001E5C34 /* PBXTargetDependency */,
 			);
 			name = TestCaloriesTests;
+			packageProductDependencies = (
+				1A4D5B122CB54BE2001E5C34 /* RxBlocking */,
+			);
 			productName = TestCaloriesTests;
 			productReference = 1A4D5AF42CB546CB001E5C34 /* TestCaloriesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -215,6 +234,10 @@
 				Base,
 			);
 			mainGroup = 1A4D5AD52CB546CA001E5C34;
+			packageReferences = (
+				1A4D5B112CB54BE2001E5C34 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				1A4D5B182CB54D2C001E5C34 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 1A4D5ADF2CB546CA001E5C34 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -601,6 +624,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A4D5B112CB54BE2001E5C34 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.8.0;
+			};
+		};
+		1A4D5B182CB54D2C001E5C34 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A4D5B122CB54BE2001E5C34 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A4D5B112CB54BE2001E5C34 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		1A4D5B142CB54BE2001E5C34 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A4D5B112CB54BE2001E5C34 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		1A4D5B162CB54BE2001E5C34 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A4D5B112CB54BE2001E5C34 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		1A4D5B192CB54D2C001E5C34 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A4D5B182CB54D2C001E5C34 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		1A4D5B1B2CB54D2C001E5C34 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A4D5B182CB54D2C001E5C34 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1A4D5AD62CB546CA001E5C34 /* Project object */;
 }

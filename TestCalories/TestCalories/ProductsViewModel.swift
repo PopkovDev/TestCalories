@@ -46,27 +46,19 @@ final class ProductsViewModel {
                 switch result {
                 case .success(let data):
                     do {
+                        /*
                         if let jsonString = String(data: data, encoding: .utf8) {
                             print("JSON String for orders: \(jsonString)")
                         }
                         let model = try JSONDecoder()
-                            .decode(SingleOrder.self, from: data)
-                        
+                            .decode(ProductDto.self, from: data)
+                        */
                         
                     } catch {
                         self.handleDecodingError(error)
                     }
                 case .failure(let error):
-                    if let networkError = error as? NetworkError,
-                       networkError == .notModified {
-                        DispatchQueue.main.async { [weak self] in
-                            guard let self else { return }
-                            self.loadingIndicator.stopAnimating()
-                            self.showAlertForNotModifiedAdmin()
-                        }
-                    } else {
-                        print(error.localizedDescription)
-                    }
+                    print(error.localizedDescription)
                 }
             }
     }

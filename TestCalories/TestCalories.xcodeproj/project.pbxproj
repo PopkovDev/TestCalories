@@ -10,9 +10,7 @@
 		1A4D5AE22CB546CA001E5C34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5AE12CB546CA001E5C34 /* AppDelegate.swift */; };
 		1A4D5AE42CB546CA001E5C34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5AE32CB546CA001E5C34 /* SceneDelegate.swift */; };
 		1A4D5AE62CB546CA001E5C34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5AE52CB546CA001E5C34 /* ViewController.swift */; };
-		1A4D5AE92CB546CA001E5C34 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1A4D5AE82CB546CA001E5C34 /* Base */; };
 		1A4D5AEB2CB546CB001E5C34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4D5AEA2CB546CB001E5C34 /* Assets.xcassets */; };
-		1A4D5AEE2CB546CB001E5C34 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1A4D5AED2CB546CB001E5C34 /* Base */; };
 		1A4D5AF92CB546CB001E5C34 /* TestCaloriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5AF82CB546CB001E5C34 /* TestCaloriesTests.swift */; };
 		1A4D5B032CB546CB001E5C34 /* TestCaloriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5B022CB546CB001E5C34 /* TestCaloriesUITests.swift */; };
 		1A4D5B052CB546CB001E5C34 /* TestCaloriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5B042CB546CB001E5C34 /* TestCaloriesUITestsLaunchTests.swift */; };
@@ -21,6 +19,9 @@
 		1A4D5B172CB54BE2001E5C34 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 1A4D5B162CB54BE2001E5C34 /* RxRelay */; };
 		1A4D5B1A2CB54D2C001E5C34 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1A4D5B192CB54D2C001E5C34 /* SnapKit */; };
 		1A4D5B1C2CB54D2C001E5C34 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 1A4D5B1B2CB54D2C001E5C34 /* SnapKit-Dynamic */; };
+		1A4D5B1F2CB54E99001E5C34 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5B1E2CB54E99001E5C34 /* ProductService.swift */; };
+		1A4D5B212CB54EA5001E5C34 /* ProductSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5B202CB54EA5001E5C34 /* ProductSearchViewModel.swift */; };
+		1A4D5B232CB54EB8001E5C34 /* ProductSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5B222CB54EB8001E5C34 /* ProductSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,15 +46,16 @@
 		1A4D5AE12CB546CA001E5C34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A4D5AE32CB546CA001E5C34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1A4D5AE52CB546CA001E5C34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1A4D5AE82CB546CA001E5C34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A4D5AEA2CB546CB001E5C34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1A4D5AED2CB546CB001E5C34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A4D5AEF2CB546CB001E5C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A4D5AF42CB546CB001E5C34 /* TestCaloriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCaloriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4D5AF82CB546CB001E5C34 /* TestCaloriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCaloriesTests.swift; sourceTree = "<group>"; };
 		1A4D5AFE2CB546CB001E5C34 /* TestCaloriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCaloriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4D5B022CB546CB001E5C34 /* TestCaloriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCaloriesUITests.swift; sourceTree = "<group>"; };
 		1A4D5B042CB546CB001E5C34 /* TestCaloriesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCaloriesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1A4D5B1E2CB54E99001E5C34 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		1A4D5B202CB54EA5001E5C34 /* ProductSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSearchViewModel.swift; sourceTree = "<group>"; };
+		1A4D5B222CB54EB8001E5C34 /* ProductSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +114,8 @@
 				1A4D5AE12CB546CA001E5C34 /* AppDelegate.swift */,
 				1A4D5AE32CB546CA001E5C34 /* SceneDelegate.swift */,
 				1A4D5AE52CB546CA001E5C34 /* ViewController.swift */,
-				1A4D5AE72CB546CA001E5C34 /* Main.storyboard */,
+				1A4D5B1D2CB54E6E001E5C34 /* ProductScreen */,
 				1A4D5AEA2CB546CB001E5C34 /* Assets.xcassets */,
-				1A4D5AEC2CB546CB001E5C34 /* LaunchScreen.storyboard */,
 				1A4D5AEF2CB546CB001E5C34 /* Info.plist */,
 			);
 			path = TestCalories;
@@ -135,6 +136,16 @@
 				1A4D5B042CB546CB001E5C34 /* TestCaloriesUITestsLaunchTests.swift */,
 			);
 			path = TestCaloriesUITests;
+			sourceTree = "<group>";
+		};
+		1A4D5B1D2CB54E6E001E5C34 /* ProductScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1A4D5B1E2CB54E99001E5C34 /* ProductService.swift */,
+				1A4D5B202CB54EA5001E5C34 /* ProductSearchViewModel.swift */,
+				1A4D5B222CB54EB8001E5C34 /* ProductSearchViewController.swift */,
+			);
+			name = ProductScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +266,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A4D5AEB2CB546CB001E5C34 /* Assets.xcassets in Resources */,
-				1A4D5AEE2CB546CB001E5C34 /* Base in Resources */,
-				1A4D5AE92CB546CA001E5C34 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +291,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A4D5AE62CB546CA001E5C34 /* ViewController.swift in Sources */,
+				1A4D5B212CB54EA5001E5C34 /* ProductSearchViewModel.swift in Sources */,
+				1A4D5B232CB54EB8001E5C34 /* ProductSearchViewController.swift in Sources */,
+				1A4D5B1F2CB54E99001E5C34 /* ProductService.swift in Sources */,
 				1A4D5AE22CB546CA001E5C34 /* AppDelegate.swift in Sources */,
 				1A4D5AE42CB546CA001E5C34 /* SceneDelegate.swift in Sources */,
 			);
@@ -318,25 +330,6 @@
 			targetProxy = 1A4D5AFF2CB546CB001E5C34 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1A4D5AE72CB546CA001E5C34 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1A4D5AE82CB546CA001E5C34 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1A4D5AEC2CB546CB001E5C34 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1A4D5AED2CB546CB001E5C34 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1A4D5B062CB546CB001E5C34 /* Debug */ = {
@@ -469,7 +462,6 @@
 				INFOPLIST_FILE = TestCalories/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,7 +488,6 @@
 				INFOPLIST_FILE = TestCalories/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -18,6 +18,7 @@ class ProductsView: UIView {
             static let trailing: CGFloat = -16
             static let smallSpacing: CGFloat = 8
             static let stackViewSpacing: CGFloat = 12
+            static let buttonHeight: CGFloat = 32
             static let pickerHeight: CGFloat = 44
             static let searchBarHeight: CGFloat = 44
             static let collectionViewTop: CGFloat = 16
@@ -31,7 +32,7 @@ class ProductsView: UIView {
     
     // MARK: - Visual Components
     
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.Texts.titleLabel
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
@@ -39,41 +40,45 @@ class ProductsView: UIView {
         return label
     }()
     
-    private let productSearchBar: UISearchBar = {
+    let productSearchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.backgroundColor = .subViewsBackground
         searchBar.placeholder = "Search for products"
         return searchBar
     }()
     
-    private let brandNamePickerView: UIPickerView = {
-        let pickerView = UIPickerView()
-        pickerView.backgroundColor = .subViewsBackground
-        return pickerView
+    let brandNamePickerButon: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .subViewsBackground
+        return button
     }()
     
-    private let categoryPickerView: UIPickerView = {
-        let pickerView = UIPickerView()
-        pickerView.backgroundColor = .subViewsBackground
-        return pickerView
+    let categoryPickerButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .subViewsBackground
+        return button
     }()
     
-    private let filtersStackView: UIStackView = {
+    let filtersStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = Constants.Insets.stackViewSpacing
         stackView.distribution = .fillEqually
-        stackView.backgroundColor = .subViewsBackground
+        stackView.backgroundColor = .background
         return stackView
     }()
     
-    private let productsCollectionView: UICollectionView = {
+    let productsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(
             frame: .zero, collectionViewLayout: layout
         )
         collectionView.backgroundColor = .clear
+        collectionView.register(
+            ProductCollectionViewCell.self,
+            forCellWithReuseIdentifier: ProductCollectionViewCell.identifier
+        )
         return collectionView
     }()
     
@@ -102,8 +107,8 @@ class ProductsView: UIView {
         ])
         
         filtersStackView.addArrangedSubviews([
-            brandNamePickerView,
-            categoryPickerView
+            brandNamePickerButon,
+            categoryPickerButton
         ])
         backgroundColor = .background
     }
@@ -113,8 +118,11 @@ class ProductsView: UIView {
         configureSearchBarConstraints()
         configureFiltersStackViewConstraints()
         configureCollectionViewConstraints()
-    }
-    
+    }    
+   
+}
+
+extension ProductsView {
     private func configureTitleLabelConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Constants.Insets.top),
@@ -137,7 +145,7 @@ class ProductsView: UIView {
             filtersStackView.topAnchor.constraint(equalTo: productSearchBar.bottomAnchor, constant: Constants.Insets.smallSpacing),
             filtersStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.Insets.leading),
             filtersStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.Insets.trailing),
-            filtersStackView.heightAnchor.constraint(equalToConstant: Constants.Insets.pickerHeight)
+            filtersStackView.heightAnchor.constraint(equalToConstant: Constants.Insets.buttonHeight)
         ])
     }
     

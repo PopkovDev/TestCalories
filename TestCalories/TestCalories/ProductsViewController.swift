@@ -41,6 +41,12 @@ final class ProductsViewController: UIViewController {
         setupSubviews()
         configureConstraints()
         bindViewModel()
+        setupCollectionViewDelegate()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        configureCornerRadiuses()
     }
 
     // MARK: - Public Methods
@@ -57,30 +63,33 @@ final class ProductsViewController: UIViewController {
     }
 
     private func bindViewModel() {
-        /*
-        searchBar.rx.text
+        
+        productsView.productSearchBar.rx.text
             .orEmpty
             .bind(to: viewModel.query)
             .disposed(by: disposeBag)
 
         viewModel.products
-            .bind(to: tableView.rx.items(cellIdentifier: "ProductCell", cellType: UITableViewCell.self)) { row, product, cell in
-                cell.textLabel?.text = "\(product.name) - \(product.calories) kcal"
+            .bind(
+                to: productsView.productsCollectionView.rx.items(
+                    cellIdentifier: "ProductCollectionViewCell", cellType: ProductCollectionViewCell.self)
+            ) { row, product, cell in
+                cell.configureWith(model: product)
             }
             .disposed(by: disposeBag)
 
-        categoryButton.rx.tap
+        productsView.categoryPickerButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.showCategoryPicker()
             })
             .disposed(by: disposeBag)
 
-        brandButton.rx.tap
+        productsView.brandNamePickerButon.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.showBrandPicker()
             })
             .disposed(by: disposeBag)
-         */
+         
     }
 
     private func showCategoryPicker() {
@@ -122,6 +131,18 @@ final class ProductsViewController: UIViewController {
             .disposed(by: disposeBag)
          */
     }
+    
+    private func setupCollectionViewDelegate() {
+        self.productsView.productsCollectionView.delegate = self
+    }
+    
+    private func configureCornerRadiuses() {
+        self.productsView.brandNamePickerButon.layer.masksToBounds = true
+        self.productsView.categoryPickerButton.layer.masksToBounds = true
+
+        self.productsView.brandNamePickerButon.layer.cornerRadius = 15
+        self.productsView.categoryPickerButton.layer.cornerRadius = 15
+    }
 }
 
 extension ProductsViewController {
@@ -137,8 +158,31 @@ extension ProductsViewController {
                 equalTo: view.trailingAnchor
             ),
             productsView.bottomAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.bottomAnchor
+                equalTo: view.bottomAnchor
             )
         ])
+    }
+}
+
+// MARK: - ProductsViewController + UICollectionViewDelegateFlowLayout
+
+extension ProductsViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        CGSize(
+            width: 350,
+            height: 80
+        )
+    }
+}
+
+// MARK: - ProductsViewController + UICollectionViewDelegate
+
+extension ProductsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
 }

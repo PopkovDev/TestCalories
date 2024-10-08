@@ -17,6 +17,10 @@
 		01CD84242CB55D4D0007963E /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD84232CB55D4D0007963E /* View+Extensions.swift */; };
 		01CD84262CB55D870007963E /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD84252CB55D870007963E /* UIStackView+Extensions.swift */; };
 		01CD84292CB55E150007963E /* PrepareForAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD84282CB55E150007963E /* PrepareForAutoLayout.swift */; };
+		01CD842C2CB5792B0007963E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD842B2CB5792B0007963E /* NetworkService.swift */; };
+		01CD842F2CB58BE50007963E /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD842E2CB58BE50007963E /* ProductCollectionViewCell.swift */; };
+		01CD84322CB5995F0007963E /* ProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD84312CB5995F0007963E /* ProductDTO.swift */; };
+		01CD84342CB599960007963E /* FoodNutriantsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD84332CB599960007963E /* FoodNutriantsDTO.swift */; };
 		1A4D5AE22CB546CA001E5C34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5AE12CB546CA001E5C34 /* AppDelegate.swift */; };
 		1A4D5AE42CB546CA001E5C34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D5AE32CB546CA001E5C34 /* SceneDelegate.swift */; };
 		1A4D5AEB2CB546CB001E5C34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4D5AEA2CB546CB001E5C34 /* Assets.xcassets */; };
@@ -51,6 +55,10 @@
 		01CD84232CB55D4D0007963E /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		01CD84252CB55D870007963E /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		01CD84282CB55E150007963E /* PrepareForAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareForAutoLayout.swift; sourceTree = "<group>"; };
+		01CD842B2CB5792B0007963E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		01CD842E2CB58BE50007963E /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		01CD84312CB5995F0007963E /* ProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDTO.swift; sourceTree = "<group>"; };
+		01CD84332CB599960007963E /* FoodNutriantsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodNutriantsDTO.swift; sourceTree = "<group>"; };
 		1A4D5ADE2CB546CA001E5C34 /* TestCalories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCalories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4D5AE12CB546CA001E5C34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A4D5AE32CB546CA001E5C34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				01CD84202CB55CBD0007963E /* ProductsView.swift */,
+				01CD842D2CB58BAC0007963E /* CollectopnView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -181,6 +190,32 @@
 				01CD84282CB55E150007963E /* PrepareForAutoLayout.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		01CD842A2CB579180007963E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				01CD842B2CB5792B0007963E /* NetworkService.swift */,
+				01CD84302CB5994E0007963E /* DTO */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		01CD842D2CB58BAC0007963E /* CollectopnView */ = {
+			isa = PBXGroup;
+			children = (
+				01CD842E2CB58BE50007963E /* ProductCollectionViewCell.swift */,
+			);
+			name = CollectopnView;
+			sourceTree = "<group>";
+		};
+		01CD84302CB5994E0007963E /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				01CD84312CB5995F0007963E /* ProductDTO.swift */,
+				01CD84332CB599960007963E /* FoodNutriantsDTO.swift */,
+			);
+			name = DTO;
 			sourceTree = "<group>";
 		};
 		1A4D5AD52CB546CA001E5C34 = {
@@ -207,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				01CD84142CB5596D0007963E /* Application */,
+				01CD842A2CB579180007963E /* Services */,
 				01CD84152CB5598A0007963E /* Modules */,
 				01CD84222CB55D350007963E /* Extensions */,
 				01CD84272CB55DFD0007963E /* Helpers */,
@@ -375,7 +411,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CD842C2CB5792B0007963E /* NetworkService.swift in Sources */,
 				1A4D5B212CB54EA5001E5C34 /* ProductsViewModel.swift in Sources */,
+				01CD842F2CB58BE50007963E /* ProductCollectionViewCell.swift in Sources */,
+				01CD84322CB5995F0007963E /* ProductDTO.swift in Sources */,
 				01CD84262CB55D870007963E /* UIStackView+Extensions.swift in Sources */,
 				1A4D5B232CB54EB8001E5C34 /* ProductsViewController.swift in Sources */,
 				01CD84292CB55E150007963E /* PrepareForAutoLayout.swift in Sources */,
@@ -383,6 +422,7 @@
 				01CD84242CB55D4D0007963E /* View+Extensions.swift in Sources */,
 				1A4D5B1F2CB54E99001E5C34 /* ProductService.swift in Sources */,
 				1A4D5AE22CB546CA001E5C34 /* AppDelegate.swift in Sources */,
+				01CD84342CB599960007963E /* FoodNutriantsDTO.swift in Sources */,
 				1A4D5AE42CB546CA001E5C34 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

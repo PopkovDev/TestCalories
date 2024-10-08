@@ -18,9 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         let productService = MockProductService()
-        let productSearchViewModel = ProductSearchViewModel(productService: productService)
-        let productSearchViewController = ProductSearchViewController(viewModel: productSearchViewModel)
-        let navigationController = UINavigationController(rootViewController: productSearchViewController)
+        let productsViewModel = ProductsViewModel(productService: productService)
+        let productsViewController = ProductsViewController(viewModel: productsViewModel)
+        let navigationController = UINavigationController(rootViewController: productsViewController)
         
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

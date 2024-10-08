@@ -1,5 +1,5 @@
 //
-//  ProductSearchViewModel.swift
+//  ProductsViewModel.swift
 //  TestCalories
 //
 //  Created by Андрей Попков on 08.10.2024.
@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class ProductSearchViewModel {
+class ProductsViewModel {
     
     let query = BehaviorRelay<String>(value: "")
     let selectedCategory = BehaviorRelay<String?>(value: nil)

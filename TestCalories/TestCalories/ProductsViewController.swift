@@ -1,26 +1,30 @@
 //
-//  ProductSearchViewController.swift
+//  productsViewController.swift
 //  TestCalories
 //
 //  Created by Андрей Попков on 08.10.2024.
 //
 
 import UIKit
+import SnapKit
 import RxSwift
 import RxCocoa
-import SnapKit
 
-class ProductSearchViewController: UIViewController {
+/// Экран для показа списка продуктов
+final class ProductsViewController: UIViewController {
 
-    private let viewModel: ProductSearchViewModel
+    // MARK: - Constants
+    
+    private let viewModel: ProductsViewModel
     private let disposeBag = DisposeBag()
+    
+    // MARK: - Visual Components
 
-    private let searchBar = UISearchBar()
-    private let categoryButton = UIButton()
-    private let brandButton = UIButton()
-    private let tableView = UITableView()
+    let productsView = ProductsView()
 
-    init(viewModel: ProductSearchViewModel) {
+    // MARK: - Initializers
+    
+    init(viewModel: ProductsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -29,57 +33,31 @@ class ProductSearchViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        
+        setupSubviews()
+        configureConstraints()
         bindViewModel()
     }
 
-    private func setupUI() {
-        view.backgroundColor = .systemBackground
-
-        searchBar.placeholder = "Search products"
-        view.addSubview(searchBar)
-
-        categoryButton.setTitle("Category", for: .normal)
-        categoryButton.backgroundColor = .systemGray5
-        categoryButton.setTitleColor(.label, for: .normal)
-        categoryButton.layer.cornerRadius = 8
-        view.addSubview(categoryButton)
-
-        brandButton.setTitle("Brand name", for: .normal)
-        brandButton.backgroundColor = .systemGray5
-        brandButton.setTitleColor(.label, for: .normal)
-        brandButton.layer.cornerRadius = 8
-        view.addSubview(brandButton)
-
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ProductCell")
-        view.addSubview(tableView)
-
-        searchBar.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.left.right.equalToSuperview().inset(16)
-        }
-
-        categoryButton.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).offset(16)
-            make.left.equalToSuperview().inset(16)
-            make.width.equalTo(view.snp.width).multipliedBy(0.45)
-        }
-
-        brandButton.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).offset(16)
-            make.right.equalToSuperview().inset(16)
-            make.width.equalTo(view.snp.width).multipliedBy(0.45)
-        }
-
-        tableView.snp.makeConstraints { make in
-            make.top.equalTo(categoryButton.snp.bottom).offset(16)
-            make.left.right.bottom.equalToSuperview().inset(16)
-        }
+    // MARK: - Public Methods
+    
+    private func setupSubviews() {
+        view.backgroundColor = .background
+        view.addSubviews([
+            productsView
+        ])
+    }
+    
+    private func configureConstraints() {
+        configureProductsViewConstraints()
     }
 
     private func bindViewModel() {
+        /*
         searchBar.rx.text
             .orEmpty
             .bind(to: viewModel.query)
@@ -102,9 +80,11 @@ class ProductSearchViewController: UIViewController {
                 self?.showBrandPicker()
             })
             .disposed(by: disposeBag)
+         */
     }
 
     private func showCategoryPicker() {
+        /*
         let alert = UIAlertController(title: "Select Category", message: nil, preferredStyle: .actionSheet)
         viewModel.categories
             .subscribe(onNext: { [weak self] categories in
@@ -120,9 +100,11 @@ class ProductSearchViewController: UIViewController {
                 self?.present(alert, animated: true)
             })
             .disposed(by: disposeBag)
+         */
     }
 
     private func showBrandPicker() {
+        /*
         let alert = UIAlertController(title: "Select Brand", message: nil, preferredStyle: .actionSheet)
         viewModel.brands
             .subscribe(onNext: { [weak self] brands in
@@ -138,5 +120,25 @@ class ProductSearchViewController: UIViewController {
                 self?.present(alert, animated: true)
             })
             .disposed(by: disposeBag)
+         */
+    }
+}
+
+extension ProductsViewController {
+    private func configureProductsViewConstraints() {
+        NSLayoutConstraint.activate([
+            productsView.topAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.topAnchor
+            ),
+            productsView.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor
+            ),
+            productsView.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor
+            ),
+            productsView.bottomAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.bottomAnchor
+            )
+        ])
     }
 }
